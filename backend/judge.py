@@ -27,21 +27,30 @@ class CodeExecutor:
         executable = source_file.replace('.cpp', '.out')
 
         try:
-            # g++ 컴파일
-            compile_process = subprocess.run(
-                ['g++', '-std=c++17', '-O2', '-o', executable, source_file],
-                capture_output=True,
-                text=True,
-                timeout=10
-            )
+            # clang++ 또는 g++ 컴파일 시도
+            compilers = ['clang++', 'g++']
+            compile_error = None
 
-            # 소스 파일 삭제
+            for compiler in compilers:
+                try:
+                    compile_process = subprocess.run(
+                        [compiler, '-std=c++17', '-O2', '-o', executable, source_file],
+                        capture_output=True,
+                        text=True,
+                        timeout=10
+                    )
+                    if compile_process.returncode == 0:
+                        os.unlink(source_file)
+                        return True, executable, None
+                    compile_error = compile_process.stderr
+                except FileNotFoundError:
+                    continue
+
+            # 모든 컴파일러 실패
             os.unlink(source_file)
+            return False, None, compile_error or "C++ 컴파일러를 찾을 수 없습니다 (g++, clang++ 모두 없음)"
 
-            if compile_process.returncode != 0:
-                return False, None, compile_process.stderr
-
-            return True, executable, None
+        except subprocess.TimeoutExpired:
 
         except subprocess.TimeoutExpired:
             os.unlink(source_file)
