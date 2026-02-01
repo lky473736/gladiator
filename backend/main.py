@@ -42,9 +42,12 @@ app = FastAPI(title="Gladiator Online Judge")
 logger.info("🚀 Gladiator Online Judge API starting...")
 
 # CORS 설정 (가장 먼저 추가해야 함!)
+# 환경변수에서 허용할 origin 목록 가져오기
+ALLOWED_ORIGINS = os.getenv("ALLOWED_ORIGINS", "http://localhost:3000").split(",")
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000"],
+    allow_origins=ALLOWED_ORIGINS,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
