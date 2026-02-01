@@ -18,7 +18,14 @@ if DATABASE_URL.startswith("sqlite"):
         DATABASE_URL, connect_args={"check_same_thread": False}
     )
 else:
-    engine = create_engine(DATABASE_URL)
+    # PostgreSQL - 연결 풀 설정 (SSL 끊김 방지)
+    engine = create_engine(
+        DATABASE_URL,
+        pool_pre_ping=True,  # 연결 상태 확인
+        pool_recycle=300,    # 5분마다 연결 재활용
+        pool_size=5,
+        max_overflow=10
+    )
 
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
