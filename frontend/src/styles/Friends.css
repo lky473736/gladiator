@@ -1,0 +1,694 @@
+/* 친구 페이지 스타일 - 미니멀 화이트 디자인 */
+
+.friends-page {
+  min-height: 100vh;
+  background-color: #ffffff;
+  padding: 40px 20px;
+  animation: pageFadeIn 0.3s ease-in-out;
+}
+
+@keyframes pageFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.friends-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* 헤더 */
+.friends-header {
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.friends-header h1 {
+  font-size: 36px;
+  font-weight: 600;
+  color: #333333;
+  margin-bottom: 8px;
+}
+
+.friends-header p {
+  font-size: 16px;
+  color: #666666;
+}
+
+/* 검색 섹션 */
+.search-section {
+  background-color: #fafafa;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 30px;
+  margin-bottom: 40px;
+}
+
+.search-section h2 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #333333;
+  margin-bottom: 20px;
+}
+
+.search-form {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.search-input {
+  flex: 1;
+  padding: 14px 16px;
+  font-size: 15px;
+  color: #333333;
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.search-input:focus {
+  border-color: #333333;
+  box-shadow: 0 0 0 3px rgba(51, 51, 51, 0.1);
+}
+
+.search-input::placeholder {
+  color: #999999;
+}
+
+/* 메시지 */
+.message {
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.message.success {
+  background-color: #f0fdf4;
+  color: #166534;
+  border: 1px solid #86efac;
+}
+
+.message.error {
+  background-color: #fff5f5;
+  color: #c53030;
+  border: 1px solid #feb2b2;
+}
+
+/* 검색 결과 */
+.search-results {
+  margin-top: 24px;
+}
+
+.search-results h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333333;
+  margin-bottom: 16px;
+}
+
+/* 친구 목록 섹션 */
+.friends-list-section {
+  background-color: #fafafa;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 30px;
+}
+
+.friends-list-section h2 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #333333;
+  margin-bottom: 20px;
+}
+
+/* 사용자 목록 */
+.users-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.user-card {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.2s ease;
+}
+
+.user-card:hover {
+  border-color: #333333;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.user-info {
+  display: flex;
+  gap: 16px;
+  flex: 1;
+}
+
+.user-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  background-color: #e0e0e0;
+}
+
+.user-details {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.user-name {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333333;
+}
+
+.user-username {
+  font-size: 14px;
+  color: #666666;
+}
+
+.user-bio {
+  font-size: 14px;
+  color: #666666;
+  margin-top: 4px;
+  line-height: 1.5;
+}
+
+.user-algorithms {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+
+.algo-tag {
+  padding: 4px 10px;
+  background-color: #e0e0e0;
+  color: #333333;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* 버튼 */
+.btn {
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+  outline: none;
+  white-space: nowrap;
+}
+
+.btn-primary {
+  background-color: #333333;
+  color: #ffffff;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background-color: #000000;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn-secondary {
+  background-color: #f5f5f5;
+  color: #333333;
+  border: 1px solid #e0e0e0;
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background-color: #e0e0e0;
+}
+
+.btn-danger {
+  background-color: #fff5f5;
+  color: #e53e3e;
+  border: 1px solid #feb2b2;
+}
+
+.btn-danger:hover:not(:disabled) {
+  background-color: #e53e3e;
+  color: #ffffff;
+  border-color: #e53e3e;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* 빈 상태 */
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+  color: #666666;
+}
+
+.empty-state p {
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* 로딩 */
+.loading {
+  text-align: center;
+  padding: 100px 20px;
+  font-size: 18px;
+  color: #666666;
+}
+
+/* 반응형 */
+@media (max-width: 768px) {
+  .friends-page {
+    padding: 20px 15px;
+  }
+
+  .friends-header h1 {
+    font-size: 28px;
+  }
+
+  .search-section,
+  .friends-list-section {
+    padding: 20px;
+  }
+
+  .search-form {
+    flex-direction: column;
+  }
+
+  .user-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .user-info {
+    width: 100%;
+  }
+
+  .btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .friends-header h1 {
+    font-size: 24px;
+  }
+
+  .user-info {
+    flex-direction: column;
+  }
+
+  .user-avatar {
+    width: 80px;
+    height: 80px;
+    align-self: center;
+  }
+}
+
+/* 친구 액션 버튼들 */
+.friend-actions {
+  display: flex;
+  gap: 8px;
+}
+
+/* 프로필 모달 */
+.profile-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.profile-modal {
+  background-color: #ffffff;
+  border-radius: 16px;
+  max-width: 900px;
+  max-height: 85vh;
+  width: 90%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  position: relative;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.modal-close-btn {
+  position: sticky;
+  top: 20px;
+  right: 20px;
+  float: right;
+  background-color: #f5f5f5;
+  border: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  z-index: 2;
+}
+
+.modal-close-btn:hover {
+  background-color: #e0e0e0;
+  transform: rotate(90deg);
+}
+
+.modal-profile-header {
+  display: flex;
+  gap: 30px;
+  padding: 40px;
+  background-color: #fafafa;
+  border-bottom: 1px solid #e0e0e0;
+  flex-wrap: wrap;
+  position: relative;
+  overflow: hidden;
+}
+
+/* 프로필 모달 배경 */
+.modal-profile-header.with-background::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: var(--bg-image);
+  background-size: cover;
+  background-position: center;
+  opacity: 0.45;
+  z-index: 0;
+  mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0.7) 50%, rgba(0,0,0,0) 100%);
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0.7) 50%, rgba(0,0,0,0) 100%);
+}
+
+.modal-profile-header > * {
+  position: relative;
+  z-index: 1;
+}
+
+.modal-profile-left {
+  display: flex;
+  gap: 24px;
+  flex: 1;
+  min-width: 300px;
+}
+
+.modal-profile-image {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.modal-profile-image-placeholder {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: #333333;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+  font-weight: 700;
+  border: 4px solid #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.modal-profile-info {
+  flex: 1;
+}
+
+.modal-profile-info h1 {
+  font-size: 28px;
+  font-weight: 600;
+  color: #333333;
+  margin-bottom: 8px;
+}
+
+.modal-profile-bio {
+  font-size: 15px;
+  color: #666666;
+  margin-bottom: 12px;
+  line-height: 1.6;
+}
+
+.modal-profile-algorithms {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+
+.modal-algo-badge {
+  padding: 6px 14px;
+  background-color: #333333;
+  color: #ffffff;
+  border-radius: 16px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.modal-profile-links {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+
+.modal-external-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  color: #333333;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.modal-external-link:hover {
+  background-color: #f5f5f5;
+  border-color: #333333;
+  transform: translateY(-2px);
+}
+
+.modal-profile-stats-container {
+  background-color: #ffffff;
+  padding: 24px;
+  border-radius: 10px;
+  border: 1px solid #e0e0e0;
+  min-width: 300px;
+}
+
+.modal-profile-stats-container h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333333;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.modal-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.modal-stat-card {
+  background-color: #f5f5f5;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 16px 12px;
+  text-align: center;
+}
+
+.modal-stat-value {
+  font-size: 24px;
+  font-weight: 700;
+  color: #333333;
+  margin-bottom: 4px;
+}
+
+.modal-stat-label {
+  font-size: 12px;
+  color: #666666;
+  font-weight: 500;
+}
+
+.modal-problems-section {
+  padding: 30px 40px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.modal-problems-section:last-child {
+  border-bottom: none;
+}
+
+.modal-problems-section h2 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #333333;
+  margin-bottom: 20px;
+}
+
+.modal-problems-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.modal-problem-item {
+  background-color: #fafafa;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.modal-problem-item:hover {
+  border-color: #333333;
+  transform: translateX(4px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.modal-problem-title {
+  font-size: 15px;
+  font-weight: 500;
+  color: #333333;
+}
+
+.modal-problem-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.modal-difficulty-badge {
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.modal-difficulty-badge.difficulty-1 {
+  background-color: #38a169;
+  color: white;
+}
+
+.modal-difficulty-badge.difficulty-2 {
+  background-color: #d69e2e;
+  color: white;
+}
+
+.modal-difficulty-badge.difficulty-3 {
+  background-color: #e53e3e;
+  color: white;
+}
+
+.modal-empty {
+  text-align: center;
+  padding: 40px 20px;
+  color: #999999;
+  font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  .profile-modal {
+    width: 95%;
+    max-height: 90vh;
+  }
+
+  .modal-profile-header {
+    flex-direction: column;
+    padding: 30px 20px;
+  }
+
+  .modal-profile-left {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .modal-stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .modal-problems-section {
+    padding: 20px;
+  }
+
+  .friend-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .friend-actions .btn {
+    width: 100%;
+  }
+}
