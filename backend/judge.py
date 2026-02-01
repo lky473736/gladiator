@@ -51,8 +51,6 @@ class CodeExecutor:
             return False, None, compile_error or "C++ 컴파일러를 찾을 수 없습니다 (g++, clang++ 모두 없음)"
 
         except subprocess.TimeoutExpired:
-
-        except subprocess.TimeoutExpired:
             os.unlink(source_file)
             return False, None, "컴파일 시간 초과"
         except Exception as e:
